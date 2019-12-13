@@ -20,66 +20,60 @@ dataset=dataset.drop(['Serial No.'],axis=1)
 
 ### DATA VISUALIZATION BEGINS ###
 
-#plt.figure(1)
-#plt.title("Distributions")
-#plt.subplot(3,2,1)
-#plt.hist(dataset['GRE Score'],color='blue')
-#plt.xlabel('GRE Score')
-#plt.ylabel('Frequency')
+plt.figure(1)
+plt.title("Distributions")
+plt.subplot(3,2,1)
+plt.hist(dataset['GRE Score'],color='blue')
+plt.xlabel('GRE Score')
+plt.ylabel('Frequency')
 
-#plt.subplot(3,2,2)
-#plt.hist(dataset['TOEFL Score'],color='red')
-#plt.xlabel('TOEFL Score')
-#plt.ylabel('Frequency')
+plt.subplot(3,2,2)
+plt.hist(dataset['TOEFL Score'],color='red')
+plt.xlabel('TOEFL Score')
+plt.ylabel('Frequency')
 
-#plt.subplot(3,2,3)
-#plt.hist(dataset['University Rating'],color='yellow')
-#plt.xlabel('University Rating')
-#plt.ylabel('Frequency')
+plt.subplot(3,2,3)
+plt.hist(dataset['University Rating'],color='yellow')
+plt.xlabel('University Rating')
+plt.ylabel('Frequency')
 
-#plt.subplot(3,2,4)
-#plt.hist(dataset['SOP'],color='orange')
-#plt.xlabel('SOP')
-#plt.ylabel('Frequency')
+plt.subplot(3,2,4)
+plt.hist(dataset['SOP'],color='orange')
+plt.xlabel('SOP')
+plt.ylabel('Frequency')
+plt.subplot(3,2,5)
 
-#plt.subplot(3,2,5)
-#plt.hist(dataset['LOR'],color='blue')
-#plt.xlabel('LOR')
-#plt.ylabel('Frequency')
-#?? Why cannot we plot an histogram for letter of recommendation
-
-#plt.subplot(3,2,6)
-#plt.hist(dataset['CGPA'],color='blue')
-#plt.xlabel('CGPA')
-#plt.ylabel('Frequency')
-
-#plt.show()
+plt.subplot(3,2,6)
+plt.hist(dataset['CGPA'],color='blue')
+plt.xlabel('CGPA')
+plt.ylabel('Frequency')
+plt.show()
 
 # after seeing the distribution, we can infer that there are variety of students applied for admission
 # then, we need to check if there are features that may relate to each other
 # to check we plot the regression line between two and check how much they relate to each other
 # this can be easily plotted with seaborn library
 
-#plt.figure(2)
-#fig=sns.regplot(x='GRE Score',y='TOEFL Score',data=dataset)
-#plt.title("GRE Score vs TOEFL Score")
-#plt.show()
+plt.figure(2)
+fig=sns.regplot(x='GRE Score',y='TOEFL Score',data=dataset)
+plt.title("GRE Score vs TOEFL Score")
+plt.show()
 
 # From figure 2, we can see that the candidates which have more GRE score have usually, 
 # more TOEFL Score, and that is true, because both focusses on English
 
-#plt.figure(3)
-#fig=sns.regplot(x='GRE Score',y='CGPA',data=dataset)
-#plt.title("GRE Score vs CGPA")
-#plt.show()
+plt.figure(3)
+fig=sns.regplot(x='GRE Score',y='CGPA',data=dataset)
+plt.title("GRE Score vs CGPA")
+plt.show()
 
 # From figure 3, we can see that the candidates which have more CGPA have usually,
 # more GRE Score, which is true, because they are hardworking, although there are exceptions
 
-#plt.figure(4)
-#fig = sns.lmplot(x="CGPA", y="LOR ", data=dataset, hue="Research")
-#plt.title("GRE Score vs CGPA")
-#plt.show()
+plt.figure(4)
+fig = sns.lmplot(x="CGPA", y="LOR ", data=dataset, hue="Research")
+plt.title("GRE Score vs CGPA")
+plt.show()
 
 # Letter of Recommendation(LOR) is not related to a person's academic excellance but
 # Having Research experience gives a better LOR. Similarly, LOR is not related with GRE
